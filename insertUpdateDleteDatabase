@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace WindowsFormsApp1{
+public partial class Form1 : Form {
+public string constring = &quot;Data Source=(localdb)\\ProjectsV13;Initial
+Catalog=db1;Integrated Security=True;Connect
+Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFai
+lover=False&quot;;
+int ID = 0;
+SqlCommandcmd;
+SqlDataAdapter adapt;
+public Form1() {InitializeComponent();DisplayData();}
+private void DisplayData(){
+SqlConnection con = new SqlConnection(constring);
+con.Open();
+DataTabledt = new DataTable();
+adapt = new SqlDataAdapter(&quot;select * from t1&quot;, con);
+adapt.Fill(dt);
+dataGridView2.DataSource = dt;
+con.Close(); }
+private void ClearData(){
+tb1.Text = &quot;&quot;;
+tb2.Text = &quot;&quot;;
+ID = 0; }
+private void dataGridView1_RowHeaderMouseClick(object sender,
+DataGridViewCellMouseEventArgs e) { }
+private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+{ ID = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+tb1.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+tb2.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString(); }
+private void b1_Click(object sender, EventArgs e){
+SqlConnection con = new SqlConnection(constring);
+if (tb1.Text != &quot;&quot; &amp;&amp; tb2.Text != &quot;&quot;){
+con.Open();
+if (con.State == System.Data.ConnectionState.Open){
+string q = &quot;insert into t1(name,state)values (&#39;&quot; + tb1.Text.ToString() +
+&quot;&#39;,&#39;&quot; + tb2.Text.ToString() + &quot;&#39;)&quot;;
+SqlCommandcmd = new SqlCommand(q, con);
+cmd.ExecuteNonQuery();
+con.Close();
+MessageBox.Show(&quot;Record Inserted Successfully&quot;);
+DisplayData();
+ClearData();
+}
+}
+else{MessageBox.Show(&quot;Please Provide Details!&quot;);}
+}
+private void b2_Click(object sender, EventArgs e) {
+
+IU1641150020 Juhi Kamdar
+SqlConnection con = new SqlConnection(constring);
+if (tb1.Text != &quot;&quot; &amp;&amp; tb2.Text != &quot;&quot;) {
+cmd = new SqlCommand(&quot;update t1 set Name=@name,State=@state where ID=@id&quot;, con);
+con.Open();
+cmd.Parameters.AddWithValue(&quot;@id&quot;, ID);
+cmd.Parameters.AddWithValue(&quot;@name&quot;, tb1.Text);
+cmd.Parameters.AddWithValue(&quot;@state&quot;, tb2.Text);
+cmd.ExecuteNonQuery();
+MessageBox.Show(&quot;Record Updated Successfully&quot;);
+con.Close();
+DisplayData();
+ClearData();
+}
+else{MessageBox.Show(&quot;Please Select Record to Update&quot;);}
+}
+private void b3_Click(object sender, EventArgs e) {
+SqlConnection con = new SqlConnection(constring);
+if (ID != 0) {
+cmd = new SqlCommand(&quot;delete t1 where ID=@id&quot;, con);
+con.Open();
+cmd.Parameters.AddWithValue(&quot;@id&quot;, ID);
+cmd.ExecuteNonQuery();
+con.Close();
+MessageBox.Show(&quot;Record Deleted Successfully!&quot;);
+DisplayData();
+ClearData();
+}
+else{MessageBox.Show(&quot;Please Select Record to Delete&quot;);}
+}
+}
+}
