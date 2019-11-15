@@ -1,0 +1,6 @@
+WebForm1.aspx.cs
+protected void Button1_Click(object sender, EventArgs e)  
+{   Session["UserName"] = tbUserName.Text;  
+    Session["Pwd"] = tbpwd.Text;  
+Response.Redirect("WebForm2.aspx");  
+}

@@ -1,0 +1,6 @@
+WebForm2.aspx.cs
+protected void Page_Load(object sender, EventArgs e)  
+    if (Session["UserName"] != null) {  
+tbUserName.Text = Session["UserName"].ToString();}  
+    if (Session["Pwd"] != null){tbpwd.Text = Session["Pwd"].ToString();}  
+}

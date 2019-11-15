@@ -1,0 +1,5 @@
+Web.config
+<system.web>
+<sessionState mode="SQLServer" sqlConnectionString="Server=DIVS\SQLEXPRESS;Integrated Security=true"></sessionState>
+<compilation debug="true" targetFramework="4.0" />
+</system.web>
