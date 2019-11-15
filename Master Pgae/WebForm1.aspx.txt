@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 WebForm1.aspx
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -11,3 +12,18 @@ WebForm1.aspx
 <h3>Android</h3>
 <h3>VisualStudio 2015</h3>
 </asp:Content>
+=======
+WebForm1.aspx
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<h1>C-SHARP CORNER</h1>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<h2>CoursesProvided:</h2>
+<h3>C-sharp</h3>
+<h3>ASP.NET</h3>
+<h3>XAMARIN</h3>
+<h3>Android</h3>
+<h3>VisualStudio 2015</h3>
+</asp:Content>
+>>>>>>> 9f21fd3430d7680935bd538d10cad63a9d587261

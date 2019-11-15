@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 body {background-color: cadetblue;}
@@ -35,3 +36,42 @@ body {background-color: cadetblue;}
 ul {
     list-style-type: none;
 }
+=======
+
+
+body {background-color: cadetblue;}
+#header {
+    background-color: chartreuse;
+    border-image - width: 50 px;
+    text-align: center;
+    width: 1000 px;
+    height: 70 px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#heimg {
+    background-image: url("photo/cssss.jpg");
+    width: 210 px;
+    height: 40 px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#heimgone {
+    background-image: url("photo/cssss.jpg");
+    width: 210 px;
+    height: 40 px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#menu {
+    background-color: yellow;
+    width: 1000 px;
+    height: 50 px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+>>>>>>> 9f21fd3430d7680935bd538d10cad63a9d587261
