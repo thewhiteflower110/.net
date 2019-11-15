@@ -1,0 +1,22 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<title></title>
+<link href="StyleSheet1.css" type="text/css" rel="stylesheet" />
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body><form id="form1" runat="server"><div id="header">
+<div id="heimg"></div></div>
+<div id="menu">
+<ul><li><a href="WebForm1.aspx">Home</a></li><li><a href="technology.aspx">Technology</a></li>
+<li><a href="#">Recent Posts</a></li><li><a href="#">Abouts</a></li><li><a href="#">Login</a></li>
+</ul>
+</div>
+<div id="center"><h3>Welcome to our c-sharp website!!!!!!!!!</h3>
+<div id="ceimg"></div></div>
+<div id="fooder"><h5>copyrights all reserved C# corner 2016</h5></div>
+<div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</div></form></body></html>
