@@ -1,0 +1,24 @@
+namespace WindowsFormsApplication8
+{
+public partial class Form1 : Form
+{
+public Form1(){InitializeComponent();}
+private void button1_Click(object sender, EventArgs e) {
+OpenFileDialog op = new OpenFileDialog();
+op.ShowDialog();
+MessageBox.Show(&quot;your file name is:&quot;+ op.FileName+ &quot; &quot;, &quot;File name&quot;);}
+private void button2_Click(object sender, EventArgs e) {
+ColorDialog clr = new ColorDialog();
+clr.ShowDialog();
+MessageBox.Show(&quot;&quot;+clr.Color); }
+private void button3_Click(object sender, EventArgs e) {
+FontDialog fnt = new FontDialog();
+fnt.ShowDialog();
+MessageBox.Show(&quot;font style is:&quot; + fnt.Font + &quot;\n font size is&quot; + fnt.MaxSize);}
+private void button4_Click(object sender, EventArgs e){
+PrintDialog prnt = new PrintDialog();
+prnt.ShowDialog();
+MessageBox.Show(&quot;No printer connectep :P&quot;);
+}
+}
+}
